@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const process = require('process')
 const ADMIN_USERNAME = 'admin'
-const ADMIN_PASSWORD = '123'
+const ADMIN_PASSWORD = process.env.password
 const FLAG = require('./config').FLAG
 const view = async(url) => {
     const browser = await puppeteer.launch({
@@ -17,9 +17,8 @@ const view = async(url) => {
         // get flag1
     await page.goto(url, { timeout: 5000 })
         // get flag2
-    // await page.setJavaScriptEnabled(false)
+    await page.setJavaScriptEnabled(false)
     await page.goto(url, { timeout: 5000 })
-
     const data = await page.evaluate((url, FLAG) => {
         if (fff.lll.aaa.ggg.value == "this_is_what_i_want") {
             return fetch(url + '?part2=' + btoa(encodeURIComponent(FLAG.substring(16))));

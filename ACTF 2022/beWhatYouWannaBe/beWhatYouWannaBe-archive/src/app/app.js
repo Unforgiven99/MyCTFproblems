@@ -11,7 +11,7 @@ const PORT = 8000
 const config = require('./config')
 const FLAG = config.FLAG
 const FAKE_FLAG = config.FAKE_FLAG
-const MONGO_URL = 'mongodb://ctf001:258258456456@152.136.182.125:27017/ctf?authSource=admin'
+const MONGO_URL = 'mongodb://mongodb:27017/ctf'
 const SECRET = rand(32, '0123456789abcdef')
 
 
